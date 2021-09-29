@@ -11,3 +11,22 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note {
+    background-color: #f2f2f2;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputnote:focus {
+    border: 0px solid;
+    padding: 5px 10px 5px 10px;
+    max-width: 350px;
+}

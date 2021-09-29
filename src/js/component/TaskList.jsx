@@ -17,9 +17,10 @@ export const TaskList = () => {
 
 	return (
 		<div className="page">
-			<div className="">
-				<div>
+			<div className="note">
+				<div className="title">
 					<input
+						className="inputnote"
 						type="text"
 						placeholder="What needs to be done?"
 						value={task}
