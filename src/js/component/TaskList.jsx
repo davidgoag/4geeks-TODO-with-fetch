@@ -61,14 +61,14 @@ export const TaskList = () => {
 						onKeyDown={handleInput}
 					/>
 				</div>
-				<div>
+				<div className="notesbody">
 					<ul>
 						{list.map((singleTask, i) => {
 							return (
 								<li key={i}>
 									{singleTask.label}
 									<span onClick={() => deleteToDo(i)}>
-										<strong> x</strong>
+										<strong className="rojo"> x</strong>
 									</span>
 								</li>
 							);
