@@ -19,13 +19,8 @@ export const TaskList = () => {
 			.then(data => setList(data));
 	}, []);
 
-	React.useEffect(() => {
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/davidgoag", {
-			method: "PUT",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(list)
-		});
-	}, [list]);
+	React.useEffect(() => {}, [list]);
+
 	const handleInput = e => {
 		if (e.keyCode == 13) {
 			if (e.target.value === "") {
@@ -41,6 +36,37 @@ export const TaskList = () => {
 				]);
 				setTask("");
 			}
+			fetch(
+				"https://assets.breatheco.de/apis/fake/todos/user/davidgoag",
+				{
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify([
+						...list,
+						{
+							label: task,
+							done: false
+						}
+					])
+				}
+			).then(resp => {
+				if (resp.ok) {
+					fetch(
+						"https://assets.breatheco.de/apis/fake/todos/user/davidgoag"
+					)
+						.then(data => {
+							if (!data.ok) {
+								return new Error(
+									"There was a problem when loading the info"
+								);
+							} else {
+								return data.json();
+							}
+						})
+						.then(data => setList(data))
+						.catch(err => console.log(err));
+				}
+			});
 		}
 	};
 	const deleteToDo = indexToRemove => {

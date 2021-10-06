@@ -44,10 +44,11 @@
     padding: 10px 10px 10px 20px;
     background-color: rgba(1,1,1,0);
     width: 100%;
+    outline: none;
 }
 
 .inputnote:focus {
-    
+
 }
 
 .inputnote::placeholder {
