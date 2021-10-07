@@ -62,7 +62,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    border-radius: 0px 0px 15px 15px;
+
     padding: 0px 20px 20px 20px;
 }
 
@@ -86,4 +86,20 @@
 
 .rojo {
     color: rgb(163, 163, 163);
+}
+
+.notefooter {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0px 0px 15px 15px;
+    padding: 0px 20px 0px 20px;
+}
+
+.counter {
+    color: rgb(179, 179, 179);
+    font-size: 0.8em;
+    
 }

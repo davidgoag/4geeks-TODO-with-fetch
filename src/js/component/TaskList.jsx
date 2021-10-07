@@ -101,6 +101,9 @@ export const TaskList = () => {
 						})}
 					</ul>
 				</div>
+				<div className="notefooter">
+					<p className="counter">Pending: {list.length}</p>
+				</div>
 			</div>
 		</div>
 	);
